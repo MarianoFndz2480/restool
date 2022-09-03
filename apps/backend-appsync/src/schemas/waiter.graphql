@@ -1,0 +1,12 @@
+type Waiter {
+  name: String
+  number: Int
+}
+
+type Query {
+  getWaiter: Waiter
+}
+
+schema {
+  query: Query
+}

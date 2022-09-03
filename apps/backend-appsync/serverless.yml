@@ -6,17 +6,55 @@ frameworkVersion: '2 || 3'
 
 provider:
   name: aws
+  region: us-east-1
   runtime: nodejs12.x
   lambdaHashingVersion: 20201221
+  stage: ${opt:stage, 'development'}
+  environment:
+    AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
+    REGION: "${self:provider.region}"
+    STAGE: "${self:provider.stage}"
+    APPSYNC_NAME: "${self:service}-${self:provider.stage}-appsync"
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - lambda:*
+            - s3:*
+          Resource:
+            - arn:aws:lambda:${self:provider.region}:*:*
 
 functions:
-  hello:
-    handler: handler.hello
+  - ${file(resources/lambda-functions.yml)}
 
 plugins:
-  - serverless-dotenv-plugin
   - serverless-appsync-plugin
   - serverless-esbuild
-  - serverless-offline
   - serverless-appsync-simulator
-  - serverless-prune-plugin
+  - serverless-offline
+
+custom:
+
+  appSync:
+    name: ${self:service}-${self:provider.stage}
+    authenticationType: API_KEY
+    serviceRole: "approach-be-${self:provider.stage}"
+    dataSources: ${file(resources/dataSources.yml)}
+    mappingTemplates: ${file(resources/resolvers.yml)}
+    schema:
+      - ./src/schemas/waiter.graphql
+
+  appsync-simulator:
+    location: ".esbuild/.build"
+    watch: []
+
+  esbuild:
+    bundle: true
+    minify: false
+    packager: npm
+    keepNames: true
+    sourcemap: true
+    watch:
+      pattern: ['src/**/**/*.ts']
+      ignore: [.esbuild, 'node_modules', '.serverless']

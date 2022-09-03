@@ -1,0 +1,2 @@
+getWaiter:
+  handler: src/apis/waiter/getWaiter.handler

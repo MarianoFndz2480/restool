@@ -5,26 +5,26 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "offline": "serverless offline start --printOutput"
+    "offline": "serverless offline start --printOutput --stage development"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "^4.8.2",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
+    "esbuild": "^0.15.6",
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.7.1",
     "serverless": "^3.17.0",
-    "serverless-appsync-plugin": "^1.12.1",
+    "serverless-appsync-plugin": "^1.14.0",
     "serverless-appsync-simulator": "^0.19.6",
-    "serverless-dotenv-plugin": "^3.12.2",
-    "serverless-esbuild": "^1.23.2",
-    "serverless-middleware": "^2.0.0",
+    "serverless-esbuild": "^1.32.8",
     "serverless-offline": "^8.3.1",
-    "serverless-prune-plugin": "^1.6.1"
+    "typescript": "^4.8.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "source-map-support": "^0.5.21"
+  }
 }

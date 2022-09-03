@@ -1,0 +1,5 @@
+- dataSource: 'getWaiter'
+  type: 'Query'
+  field: 'getWaiter'
+  request: 'common-request.vtl'
+  response: 'common-response.vtl'

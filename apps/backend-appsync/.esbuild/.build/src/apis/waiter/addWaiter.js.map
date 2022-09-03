@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../src/apis/waiter/addWaiter.ts"],
+  "sourcesContent": ["export const handler = (event) => {\n  console.log(event);\n  return {\n    data: {\n      name: 'Mariano',\n      number: 1,\n    },\n  };\n};\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAO,IAAM,UAAU,wBAAC,UAAU;AAChC,UAAQ,IAAI,KAAK;AACjB,SAAO;AAAA,IACL,MAAM;AAAA,MACJ,MAAM;AAAA,MACN,QAAQ;AAAA,IACV;AAAA,EACF;AACF,GARuB;",
+  "names": []
+}
