@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../../../src/apis/waiter/getWaiter.ts"],
-  "sourcesContent": ["export const handler = () => {\n  return {\n    data: {\n      name: 'Mariano',\n      number: 1,\n    },\n  };\n};\n"],
-  "mappings": ";;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAO,IAAM,UAAU,6BAAM;AAC3B,SAAO;AAAA,IACL,MAAM;AAAA,MACJ,MAAM;AAAA,MACN,QAAQ;AAAA,IACV;AAAA,EACF;AACF,GAPuB;",
-  "names": []
-}
