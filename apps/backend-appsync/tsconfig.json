@@ -1,6 +1,16 @@
 {
     "compilerOptions": {
-        "rootDir": "./src",
-        "outDir": "./build"
-    }
+        // "rootDir": "./src",
+        "outDir": "./build",
+        "types": ["node"],
+        "module": "Node16",
+        "target": "ES2022"
+    },
+  "include": ["src/**/*.ts"],
+  "exclude": [
+    "node_modules/**/*",
+    ".serverless/**/*",
+    ".esbuild/**/*",
+    ".vscode/**/*"
+  ]
 }
