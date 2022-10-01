@@ -3,3 +3,8 @@
   field: 'getWaiter'
   request: 'common-request.vtl'
   response: 'common-response.vtl'
+- dataSource: 'getProduct'
+  type: 'Query'
+  field: 'getProduct'
+  request: 'common-request.vtl'
+  response: 'common-response.vtl'

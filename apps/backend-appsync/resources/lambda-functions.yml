@@ -1,2 +1,4 @@
 getWaiter:
   handler: src/apis/waiter/getWaiter.handler
+getProduct:
+  handler: src/apis/product/getProduct.handler
